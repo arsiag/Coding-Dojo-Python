@@ -1,0 +1,48 @@
+body{
+    width: 800px;
+    height: 360px;
+    border: 3px solid black;
+    margin: 0px auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+    top: 50px;
+}
+#formarea{
+    width: 390px;
+    height: 300px;
+    display: inline-block;
+    margin-top: 30px;
+    border-right: 6px solid black;
+}
+#displayarea{
+    width: 390px;
+    height: 300px;
+    display: inline-block;
+    margin-top: 30px;
+    vertical-align: top;
+}
+#process {
+    width: 120px;
+    height: 30px;
+    background-color: lightblue;
+    display: block;
+    margin-top: 10px;
+}
+#clear {
+    width: 120px;
+    height: 30px;
+    background-color: #CF6767;
+    display: block;
+    float: right;
+    margin-top: 10px;
+}
+#words{
+    margin-top:50px;
+}
+input[type="radio"]{
+    margin-left: 20px;
+}
+.big{
+    font-size: 2em;
+}

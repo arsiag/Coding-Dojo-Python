@@ -1,0 +1,60 @@
+
+.formarea{
+    width: 400px;
+    height: 360px;
+    border: 3px solid black;
+    margin: 0px auto;
+    padding: 20px;
+    position: relative;
+    top: 50px;
+}
+#header{
+    width: 400px;
+    height: 80px;
+    border: 3px solid black;
+    background-color: #85E785;
+    margin: 0px auto;
+    padding: 20px;
+}
+p{
+    display: block;
+    padding: 2px;
+    font-size: 120%;
+}
+input{
+    float: right;
+ }
+select{
+    float: right;
+    width: 173px;
+    height: 20px;
+
+}
+textarea{
+    width: 388px;
+    height: 100px;
+    margin: 0px auto;
+    display: block;
+}
+#button{
+    width: 100px;
+    height: 30px;
+    background-color: lightblue;
+    display: block;
+    float: right;
+    margin-top: 10px;
+}
+h2{
+    font-size: 120%;
+
+}
+#left{
+    width: 198px;
+    height: 240px;
+    display: inline-block;
+}
+#right{
+    width: 198px;
+    height: 240px;
+    display: inline-block;
+}

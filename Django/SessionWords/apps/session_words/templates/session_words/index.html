@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Session Words</title>
+        <meta charset="UTF-8">
+        <!-- <link rel="stylesheet" href="../../../session_words/static/session_words/css/style.css" type="text/css"> -->
+        {% load static %}
+        <!-- The line above tells Django to be ready to listen for static files -->
+        <link rel="stylesheet" href="{% static 'session_words/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+        <div id="formarea">
+            <form action='/process' method='post'>
+                {% csrf_token %}
+                <h1><label for="newword">Add a new word</label></h1>
+                <input type="text" id="newword" name="newword">
+                <p><label for="color">Choose Color:</label></p>
+                <p>
+                    <input checked="checked" type="radio" id="red" name="color" value="red">
+                    <label for="red">Red</label>
+                </p>
+                <p>
+                    <input type="radio" id="green" name="color" value="green">
+                    <label for="green">Green</label>
+                </p>
+                <p>
+                    <input type="radio" id="blue" name="color" value="blue">
+                    <label for="blue">Blue</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="bigfont" name="bigfont" value="bigfont">
+                    <label for="bigfont">show in BIG fonts!</label>
+                </p>
+                <input id="process" type='submit' value='Add to Session'>
+            </form>
+        </div>     
+        <div id="displayarea">
+            <form action='/clear' method='post'>
+                {% csrf_token %}
+                <input id="clear" type='submit' value='Clear Session'>
+            </form>
+            <div id="words">
+                {% if request.session.data %}
+                    {% for word in request.session.data %}
+                        <p><span style="color:{{ word.color }}" class="{{ word.font }}">{{word.newword}}</span> - added on {{ word.created_at }}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+    </body>
+</html>

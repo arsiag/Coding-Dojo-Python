@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add Book and Review</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'belt_review/css/style.css' %}" media="screen" title="no title">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div id="headerleft">
+                    <h1>Add a New Book Title and a Review: </h1>       
+                </div>
+                <div id="headerright">
+                    <form action='/logout' method='POST'>
+                        {% csrf_token %}
+                        <a class="nav" href="/books">Home</a>
+                        <a class="nav" href="/logout">Logout</a>
+                    </form>
+                </div>
+            </div>
+            <div id="addleftwrapper">
+                <div class="msgarea">
+                    {% if messages %}
+                    <div class="messages">
+                        {% for msg in messages %}
+                        <div class="error">
+                            <p>{{ msg }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                <form action="/books/create" method="POST">
+                    {% csrf_token %}
+                    <p>Book Title: <input type='text' name='title'></p>
+                    <p>Author: </p>
+                    <p class="subpar">Choose from the list: 
+                        <select name="author">
+                        <option value=""></option>
+                        {% for author in authors %}
+                            <option value="{{author.id}}">{{author.name}}</option>
+                        {% endfor %}
+                        </select>
+                    </p>
+                    <p class="subpar">Or add a new author: <input type="text" name="new_author"></p>
+                    <p class="longpar" >Review: <textarea rows="5" cols="40" type="text" name="review"></textarea></p>
+                    <p>Rating: 
+                        <select name="rating">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </p>     
+                    <input class="longbutton" type="submit" value="Add Book and Review">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

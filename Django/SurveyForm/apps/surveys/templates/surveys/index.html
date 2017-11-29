@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Survey Form</title>
+        <meta charset="UTF-8">
+        <!-- <link rel="stylesheet" href="../../../surveys/static/surveys/css/style.css" type="text/css"> -->
+        {% load static %}
+        <!-- The line above tells Django to be ready to listen for static files -->
+        <link rel="stylesheet" href="{% static 'surveys/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+        <div class="formarea">
+            <form action='/process' method='post'>
+                {% csrf_token %}
+                <p>Your Name: <input type='text' name='name'></p>
+                <p>Dojo Location: 
+                    <select name='location'>
+                        <option value="Seattle">Seattle</option>
+                        <option value="DC">Washington D.C.</option>
+                        <option value="Chicago">Chicago</option>
+                        <option value="Burbank">Burbank</option>
+                        <option value="San Jose">San Jose</option>
+                        <option value="Dallas">Dallas</option>
+                    </select>
+                </p>
+                <p>Favorite Language:  
+                    <select name='lang'>
+                        <option value="Python">Python</option>
+                        <option value="Javascript">Javascript</option>
+                        <option value="Java">Java</option>
+                        <option value="Ruby">Ruby</option>
+                    </select>
+                </p>
+                <p>Comment (optional):</p>
+                <textarea name="comment"></textarea>
+                <input id="button" type='submit' value='Submit'>
+            </form>
+        </div>     
+    </body>
+</html>

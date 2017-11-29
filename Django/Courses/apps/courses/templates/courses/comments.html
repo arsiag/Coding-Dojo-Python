@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Comments</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'courses/css/courses.css' %}" media="screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+        <h2>Course Comments</h2>
+        <h4>Name: {{course.name}}</h4>
+        <h4>Description: {{course.desc}}</h4>
+        <form action="/courses/{{course.id}}/comments/create" method="POST">
+            {% csrf_token %}
+            <h4>Type your comment below:</h4>
+            <h4><textarea name="content"></textarea></h4>
+            <h4><input id="postcomment" type="submit" name="submit" value="Post"></h4>
+            <h4><a href="/courses">Go Back</a></h4>   
+        </form>
+        {% if comments %}
+        <ul>
+            {% for comment in comments %}
+                <h4><li>{{comment.content}} - {{comment.created_at}}</li></h4>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </body>
+</html>

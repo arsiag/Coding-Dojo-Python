@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Results</title>
+        <meta charset="UTF-8">
+        <!-- <link rel="stylesheet" href="../../../surveys/static/surveys/css/style.css" type="text/css"> -->
+        {% load static %}
+        <!-- The line above tells Django to be ready to listen for static files -->
+        <link rel="stylesheet" href="{% static 'surveys/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+        <div id="header">
+            <h2>Thanks for submitting! You have submitted this form {{ request.session.counter }} times now.</h2>
+        </div>
+        <div class="formarea">
+        <div id="left">
+            {% for info in request.session.data.items %}
+                <p>{{ info.0 }}:</p>
+            {% endfor %}
+        </div>
+        <div id="right">
+            {% for info in request.session.data.items %}
+                <p>{{ info.1 }}</p>
+            {% endfor %}
+        </div>
+        <form action='/'>
+            <input id="button" type='submit' value='Go Back'>
+        </form>
+        </div>
+    </body>
+</html>

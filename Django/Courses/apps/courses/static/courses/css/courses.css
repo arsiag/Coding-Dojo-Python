@@ -1,0 +1,72 @@
+table{
+    width: 80%;
+    margin: 0px auto;
+	text-align: left;
+	border: 1px solid black;
+}
+th,td{
+	padding: 5px;
+}
+tr:nth-child(even){
+	background-color: rgb(211, 211, 211);
+}
+h1, h2, h3, h4{
+    margin-left: 100px;
+}
+#add{
+    width: 100px;
+    height: 30px;
+    margin-left: 385px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: green;
+    color: white;
+    display: block;
+}
+.yesno{
+    display:inline-block;
+    vertical-align: top;
+}
+#yesdelete{
+    width: 200px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+}
+#nodelete{
+    width: 30px;
+    height: 30px;
+    margin-left: 100px;
+    margin-top: 10px;
+    background-color: lightgray;
+}
+#postcomment{
+    width: 100px;
+    height: 30px;
+    /* margin-left: 20px; */
+    margin-top: 10px;
+    background-color: #6161BD;
+    color: white;
+}
+input[type="text"], .inputlabel{
+    width: 300px;
+    height: 20px;
+    margin-left: 40px;
+    display: inline-block;
+}
+textarea{
+    width: 300px;
+    height: 100px;
+    margin-left: 4px;
+    display: inline-block;
+    vertical-align: top;
+
+}
+li{
+    color: red;
+}
+a{
+    margin-right: 10px;
+}

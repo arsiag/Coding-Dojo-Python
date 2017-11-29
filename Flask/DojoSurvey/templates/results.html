@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dojo Survey results</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='DojoSurvey.css') }}">
+    </head>
+    <body>
+        <h1>Submitted info</h1>
+        <div id="left">
+            <p>Name:</p>
+            <p>Location:</p>
+            <p>Favorite Language:</p>
+            <p>Comment:</p>
+        </div>
+        <div id="right">
+            <p>{{session['name']}}</p>
+            <p>{{session['location']}}</p>
+            <p>{{session['lang']}}</p>
+            <p>{{session['comment']}}</p>
+        </div>
+        <form action='/'>
+            <input id="button" type='submit' value='Go Back'>
+        </form>
+    </body>
+</html>

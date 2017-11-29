@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'users/css/users.css' %}" media="screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+        <h1>Add a new user</h1>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form action="/users/create" method="POST">
+            {% csrf_token %}
+            <p class="inputlabel">First name:</p>
+            <input type="text" name="first_name" value="">
+            <p class="inputlabel">Last name:</p>
+            <input type="text" name="last_name" value="">
+            <p class="inputlabel">Email:</p>
+            <input type="text" name="email" value="">
+            <input type="submit" name="create" value="Create">
+        </form>
+        <nav>
+            <h2><a href="/users">Go Back</a></h2>
+        </nav>
+    </body>
+</html>

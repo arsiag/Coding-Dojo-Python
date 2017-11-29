@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Color Picker</title>
+        <meta charset="UTF-8">
+        <style>
+            body {
+                width: 100%;
+                margin: 0px auto;
+                text-align: center;
+                /* background-color: {{session['color']}} */
+                background-color: rgb({{session['color']}});
+            }
+            form{
+                width: 40%;
+                height: 200px;
+                margin: 0px auto;
+                text-align: center;
+                padding: 40px;
+            }
+            p{
+                display: block;
+                padding: 5px;
+                font-size: 120%;
+                margin: 0px auto;
+                margin-right: 100px;
+                margin-bottom: 10px;
+            }
+            input{
+                float: right;
+            }
+            input[type="submit"]{
+                margin-right: 100px;
+            }
+        
+            #note{
+                color: red;
+                margin: 0px auto;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Enter your color values below:</h1>
+        <form action='/color' method='post'>
+            <p>Red: <input type='text' name='red'></p>
+            <p>Green: <input type='text' name='green'></p>
+            <p>Blue: <input type='text' name='blue'></p>
+            <p id="note">All values must be between 1 and 255</p>
+            <input type='submit' value='Show my color!'>
+        </form>
+    </body>
+</html>

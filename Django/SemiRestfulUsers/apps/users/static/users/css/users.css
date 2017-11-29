@@ -1,0 +1,36 @@
+table{
+    width: 80%;
+    margin: 0px auto;
+	margin: 20px auto;
+	text-align: left;
+	border: 1px solid black;
+}
+th,td{
+	padding: 5px;
+}
+tr:nth-child(even){
+	background-color: rgb(211, 211, 211);
+}
+h1, h2, h3, .navs{
+    margin-left: 100px;
+}
+input[type="submit"]{
+    width: 100px;
+    height: 30px;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #9090EB;
+    color: white;
+    display: block;
+}
+input[type="text"], .inputlabel{
+    margin-left: 100px;
+    display: block;
+}
+li{
+    color: red;
+}
+a{
+    margin-right: 10px;
+}

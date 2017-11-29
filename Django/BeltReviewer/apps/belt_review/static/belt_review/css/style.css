@@ -1,0 +1,169 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+#wrapper {
+	width: 1072px;
+	margin: 0px auto;
+	padding: 5px;
+	overflow: hidden;
+    color: black;
+}
+#header {
+    width: inherit;
+    height: 50px;
+    margin-top: 50px;
+}
+#headerleft{
+    width: 700px;
+    height: 50px;
+    display: inline-block;
+    vertical-align: top;
+}
+#headerright {
+    width: 320px;
+    height: 50px;
+    display: inline-block;
+    vertical-align: top;
+}
+#loginleftwrapper {
+    width: 500px;
+    height: 400px;
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px; 
+}
+#loginrightwrapper{
+    width: 500px;
+    height: 300px;
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px; 
+}
+#homeleftwrapper {
+    width: 600px;
+    height: 500px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+    padding: 15px; 
+	overflow-y: scroll;
+}
+#homerightwrapper{
+    width: 400px;
+    height: 300px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+    padding: 15px; 
+	overflow-y: scroll;
+}
+#addleftwrapper {
+    width: 500px;
+    height: 400px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+    padding: 15px; 
+}
+#bookleftwrapper {
+    width: 600px;
+    height: 400px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+    padding: 15px; 
+	overflow-y: scroll;
+}
+#bookrightwrapper{
+    width: 400px;
+    height: 300px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+    padding: 15px; 
+	overflow-y: scroll;
+}
+#userleftwrapper {
+    width: 500px;
+    height: 400px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+    padding: 15px; 
+}
+#userrightwrapper{
+    width: 500px;
+    height: 300px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+    padding: 15px; 
+	overflow-y: hidden;
+}
+.msgarea{
+    width: inherit;
+    height: 100px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    overflow-y: hidden;
+}
+h1, h2{
+    margin-bottom: 20px;
+}
+p{
+    display: block;
+    padding: 5px;
+    font-size: 120%;
+    margin-left: 10px;
+}
+a{
+    font-size: 120%;
+    display: inline-block;
+}
+input{
+    float: right;
+}
+select{
+    width: 175px;
+    float: right;
+}
+textarea{
+    vertical-align: top;
+    float: right;
+}
+.subpar{
+    margin-left: 30px;
+}
+.longpar{
+    margin-bottom: 70px;
+}
+.button{
+    width: 100px;
+    height: 30px;
+    background-color: lightblue;
+    display: block;
+    float: right;
+    margin-top: 10px;
+}
+.longbutton{
+    width: 200px;
+    height: 30px;
+    background-color: lightblue;
+    display: block;
+    float: right;
+    margin-top: 10px;
+}
+.nav{
+    margin-left: 20px;
+}
+.error {
+    color: red;
+}
+.success {
+    color: green;
+}

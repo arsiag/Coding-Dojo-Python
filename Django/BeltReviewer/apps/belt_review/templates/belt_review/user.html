@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>User Reviews</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'belt_review/css/style.css' %}" media="screen" title="no title">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div id="headerleft">  
+                </div>
+                <div id="headerright">
+                    <form action='/logout' method='POST'>
+                        {% csrf_token %}
+                        <a class="nav" href="/books">Home</a>
+                        <a class="nav" href="/books/add">Add book and review</a>
+                        <a class="nav" href="/logout">Logout</a>
+                    </form>
+                </div>
+            </div>
+            <div id="userleftwrapper">
+                <h1><strong>User Alias: </strong>{{user.alias}}</h1>
+                <h2><strong>Name: </strong> {{user.name}}</h2> 
+                <h2><strong>Email: </strong> {{user.email}}</h2> 
+                <h2><strong>Total Reviews: </strong> {{user.reviews_left.all.count}}</h2>
+                <hr>
+                <h1>Posted Reviews on the Folowing Books</h1>
+                {% for book in books %}
+                    <h3><a href="/books/{{book.id}}">{{book.title}}</a></h3><br>
+                {% endfor %}
+            </div>
+            <div id="userrightwrapper">
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Books Home</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'belt_review/css/style.css' %}" media="screen" title="no title">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div id="headerleft">
+                    <h1>Welcome, {{request.session.alias}}! </h1>       
+                </div>
+                <div id="headerright">
+                    <a class="nav" href="/books/add">Add Book and Review</a>
+                    <a class="nav" href="/logout">Logout</a>           
+                </div>
+            </div>
+            <div id="homeleftwrapper">
+                <h2>Recent Book Reviews:</h2>
+                <hr>
+                {% for review in recent %}
+                    <h2><a href="/books/{{review.book.id}}">{{ review.book.title }}</a></h2>
+                    <p>Rating: {{ review.rating }}</p>
+                    <p><a href="/user/{{review.user.id}}">{{ review.user.name}}</a> says: {{ review.review }}</p>
+                    <p>Posted on: {{ review.created_at }}</p>
+                    {% if review.user.id == request.session.id %}
+                        <p><a href="/delete/{{review.id}}">Delete this Review</a></p>
+                    {% endif %}
+                    <hr>
+                {% endfor %}
+            </div>
+            <div id="homerightwrapper">
+                <h2>Other Books with Reviews:</h2>
+                {% for review in rest %}
+                    <h3><a href="/books/{{review.book.id}}">{{ review.book.title }}</a></h3><br>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

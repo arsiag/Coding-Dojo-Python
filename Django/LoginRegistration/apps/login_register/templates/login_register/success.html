@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Success</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'login_register/css/style.css' %}" media="screen" title="no title">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div id="headerleft">
+                    <h1>Welcome! You are logged in now. </h1>
+                    
+                </div>
+                <div id="headerright">
+                    <form action='/logout' method='POST'>
+                        {% csrf_token %}
+                        <input class="button" type='submit' name='logout' value='Logout'>
+                    </form>
+                </div>
+            </div>
+            {% if messages %}
+            <div class="success">
+                {% for msg in messages %}
+                    {% if msg.tags == "login success" %}
+                        <h3>{{ msg }}</h3>
+                    {% endif %}
+                {% endfor -%}
+            </div>
+            {% endif %}
+        </div>
+    </body>
+</html>

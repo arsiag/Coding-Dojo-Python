@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Courses</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'courses/css/courses.css' %}" media="screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+        <h2>Add a new course</h2>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="/courses/create" method="POST">
+            {% csrf_token %}
+            <h4>Name: <input type="text" name="name"></h4>
+            <h4>Description: <textarea name="desc"></textarea></h4>
+            <input id="add" type="submit" name="submit" value="Add">
+        </form>'
+        <h2>Courses</h2>
+        <table id="courses">
+            <tr>
+                <th><p>Course Name</p></th>
+                <th><p>Description</p></th>
+                <th><p>Date Added</p></th>
+                <th><p>Actions</p></th>
+            </tr>
+            {% if courses %}
+            {% for course in courses %}
+            <tr>
+                <td><p>{{course.name}}</p></td>
+                <td><p>{{course.desc}}</p></td>
+                <td><p>{{course.created_at}}</p></td>
+                <td>
+                    <a href="/courses/destory/{{course.id}}">remove</a>
+                    <a href="/courses/{{course.id}}/comments">comments</a>
+                </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </table>
+    </body>
+</html>

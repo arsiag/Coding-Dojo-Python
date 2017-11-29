@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login Registration</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'login_register/css/style.css' %}" media="screen" title="no title">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div id="headerleft">
+                    <h1>Login and Registration</h1>
+                </div>
+            </div>
+            <div id="leftwrapper">
+                <div class="msgarea">
+                    {% if messages %}
+                        {% for msg in messages %}
+                            {% if msg.tags == "register error" %}
+                                <div class="error">
+                                    <h3>{{ msg }}</h3>
+                                </div>
+                            {% elif msg.tags == "register success" %}
+                                <div class="success">
+                                    <h3>{{ msg }}</h3>
+                                </div>
+                            {% endif %}
+                        {% endfor -%}      
+                    {% endif %}
+                </div>
+                <form action='/register' method='post'>
+                    {% csrf_token %}
+                    <h2>Register:</h2>
+                    <p>First Name: <input type='text' name='fname'></p>
+                    <p>Last Name: <input type='text' name='lname'></p>
+                    <p>Email: <input type='text' name='email'></p>
+                    <p>Password: <input type='text' name='pword'></p>
+                    <p>Confirm password: <input type='text' name='cpword'></p>
+                    <input class="button" type='submit' name='register' value='Register'>
+                </form>
+            </div>
+            <div id="rightwrapper">
+                <div class="msgarea">
+                    {% if messages %}
+                        {% for msg in messages %}
+                            {% if msg.tags == "login error" %}
+                                <div class="error">
+                                    <h3>{{ msg }}</h3>
+                                </div>
+                            {% elif msg.tags == "login success" %}
+                                <div class="success">
+                                    <h3>{{ msg }}</h3>
+                                </div>
+                            {% endif %}
+                        {% endfor -%}      
+                    {% endif %}
+                </div>
+                <form action='/login' method='post'>
+                    {% csrf_token %}
+                    <h2>Login:</h2>
+                    <p>Email: <input type='text' name='email'></p>
+                    <p>Password: <input type='text' name='pword'></p>
+                    <input class="button" type='submit' name='login' value='Login'>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

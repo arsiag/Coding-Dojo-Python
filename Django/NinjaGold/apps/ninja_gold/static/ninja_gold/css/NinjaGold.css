@@ -1,0 +1,67 @@
+h3 {
+    display: inline-block;
+    margin-left: 20px;
+}
+#totalbox{
+    width: 190px;
+    border: 2px solid black;
+    display: inline-block;
+    text-align: center;
+}
+
+.reset {
+    display: inline-block;
+    margin-left: 20px;
+}
+input[type="submit"] {
+    background-color:gold;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.row {
+    width: 100%;
+    margin-left: 20px;
+    margin-top: 10px;
+    position: relative;
+    clear: both;
+}
+
+.location {
+    box-sizing: border-box;
+    width: 20%;
+    height: 250px;
+    margin-right: 2%;
+    display: inline-block;
+    border: 3px solid black;
+    text-align: center;
+    padding: 40px;
+}
+
+.location:first-child {
+    margin-left: 20px;
+}
+
+.activity {
+    width: 86.5%;
+    height: 200px;
+    margin-left: 20px;
+    border: 3px solid black;
+    overflow: scroll;
+}
+
+li {
+    list-style: none;
+}
+
+.lost {
+    color: red;
+    font-weight: bold;
+}
+
+.earn {
+    color: green;
+    font-weight: bold;
+}

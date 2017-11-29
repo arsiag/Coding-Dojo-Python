@@ -1,0 +1,40 @@
+h1, h2, h3, form{
+    text-align: center;
+    margin: 0px auto;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    margin: 0px auto;
+    margin-top: 20px;
+    display: block;
+}
+input[type="text"] {
+    width: 100px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.error {
+    background: red;
+    padding: 60px;
+    width:200px;
+    height: 140px;
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.success {
+    background: green;
+    padding: 60px;
+    width:200px;
+    height: 140px;
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: center;
+}

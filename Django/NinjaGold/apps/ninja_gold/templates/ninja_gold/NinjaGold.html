@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ninja Gold</title>
+        <meta charset="UTF-8">
+        <!-- <link rel="stylesheet" href="../../../ninja_gold/static/ninja_gold/css/NinjaGold.css" type="text/css"> -->
+        {% load static %}
+        <!-- The line above tells Django to be ready to listen for static files -->
+        <link rel="stylesheet" href="{% static 'ninja_gold/css/NinjaGold.css' %}" media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+        <div class="row">
+            <h3>Your gold: <div id="totalbox">{{request.session.total}}</div></h3>
+            <form action="/clear" method="POST" class="reset">
+                {% csrf_token %}
+                <input type="submit" name="submit" value="Reset gold"/>
+            </form>
+        </div>
+        <div class="row">
+            <div class="location">
+                <h1>Farm</h1>
+                <h4>(earns 10-20 gold)</h4>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="hidden" value="farm"/>
+                    <input type="submit" name="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div class="location">
+                <h1>Cave</h1>
+                <h4>(earns 5-10 gold)</h4>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="hidden" value="cave"/>
+                    <input type="submit" name="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div class="location">
+                <h1>House</h1>
+                <h4>(earns 2-5 gold)</h4>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="hidden" value="house"/>
+                    <input type="submit" name="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div class="location">
+                <h1>Casino</h1>
+                <h4>(earns/takes 0-50 gold)</h4>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="hidden" value="casino"/>
+                    <input type="submit" name="submit" value="Find Gold!"/>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Activities:</h3>
+            <div class="activity">
+                {% if request.session.activity %}
+                <ul>
+                    {% for class, act in request.session.activity %}
+                        <li class={{class}}>{{act}}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>
